@@ -26,3 +26,24 @@ print(df.info())
 # describe method in pandas
 print("Discription of the data set")
 print(df.describe())
+
+#column and shapes attributes in pandas
+print(f'\nShape: {df.shape}')
+print(f'Column Names: {df.columns}')
+
+#how to apply condition 
+name = df['StationId']
+print(f"this is {name}")
+
+subset = df[["NO2", "NO", "NH3"]]
+print("\n Subset with NO2 and NO")
+print(subset)
+
+#filtering rows based on the condition
+
+high_pollution = df[df["NO2"] > 1.0]
+print(high_pollution)
+
+#multiple conditions
+very_high_pollution = df[(df["NO"] > 1) & (df["NO2"] > 1.0)]
+print(very_high_pollution)
